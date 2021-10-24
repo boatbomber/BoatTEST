@@ -62,6 +62,10 @@ local function run(options)
 	log("Test run complete, outputting results")
 
 	output(results, passed, failed, skipped)
+
+	if failed > 0 then
+		error("Testing completed with failures", 2)
+	end
 end
 
 return run
