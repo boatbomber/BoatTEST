@@ -1,4 +1,4 @@
-local function output(results: {[any]: any}, passed: number, failed: number, skipped: number)
+local function output(options: {[string]: any}, results: {[any]: any}, passed: number, failed: number, skipped: number)
 	local content = {
 		"\n == Test Results ==",
 		string.format(" %d Passed, %d Failed, %d Skipped\n", passed, failed, skipped)
@@ -39,11 +39,13 @@ local function output(results: {[any]: any}, passed: number, failed: number, ski
 			for _,o in ipairs(failures) do
 				table.insert(content, o)
 			end
-			for _,o in ipairs(passes) do
-				table.insert(content, o)
-			end
-			for _,o in ipairs(skips) do
-				table.insert(content, o)
+			if not options.onlyShowFailures then
+				for _,o in ipairs(passes) do
+					table.insert(content, o)
+				end
+				for _,o in ipairs(skips) do
+					table.insert(content, o)
+				end
 			end
 		end
 	end

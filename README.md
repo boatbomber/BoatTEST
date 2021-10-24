@@ -14,6 +14,9 @@ A table of Instances to search for .spec ModuleScripts within
 `config.includeDescendants` -
 A boolean that defines whether to run all descendant spec files of directories or just the direct children
 
+`config.onlyShowFailures` -
+A boolean that defines whether the output will only include failed tests
+
 `config.verbose` -
 A boolean that defines whether verbose logging is enabled
 
