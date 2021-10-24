@@ -1,4 +1,4 @@
-local function this(v: any)
+local function thisValue(v: any)
 	local query = setmetatable({
 		_value = v,
 		_never = false,
@@ -106,4 +106,4 @@ local function this(v: any)
 	return query
 end
 
-return this
+return thisValue
