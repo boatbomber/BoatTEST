@@ -1,6 +1,9 @@
 # BoatTEST
 
-Boat's TrulyEasySimpleTesting - A Luau unit testing framework. Inspired by Elttob's FusionCI
+Boat's TrulyEasySimpleTesting - A Luau unit testing framework. Inspired by Elttob's FusionCI.
+
+![image](https://user-images.githubusercontent.com/40185666/138577802-788bb760-c40a-4e8a-b810-63775eeebe9a.png)
+![image](https://user-images.githubusercontent.com/40185666/138577827-f54eecc3-7e17-4d4e-b8e4-7c88f53a94c0.png)
 
 ## API
 
