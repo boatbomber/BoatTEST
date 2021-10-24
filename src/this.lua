@@ -6,7 +6,6 @@ local function this(v: any)
 		__index = function(self, key)
 			if key == "never" then
 				rawset(self, "_never", not rawget(self, "_never"))
-
 			elseif key == "exists" or key == "exist" then
 				return function()
 					local value = rawget(self, "_value")
@@ -16,13 +15,11 @@ local function this(v: any)
 					if never then
 						result = not result
 					end
-					assert(result, string.format(
-						"Expected value%s to exist, got '%s'",
-						never and " never" or "",
-						tostring(value)
-					))
+					assert(
+						result,
+						string.format("Expected value%s to exist, got '%s'", never and " never" or "", tostring(value))
+					)
 				end
-
 			elseif key == "equal" or key == "equals" then
 				return function(expectedValue: any)
 					local value = rawget(self, "_value")
@@ -32,13 +29,16 @@ local function this(v: any)
 					if never then
 						result = not result
 					end
-					assert(result, string.format(
-						"Expected value%s to be '%s', got '%s'",
-						never and " never" or "",
-						expectedValue, tostring(value)
-					))
+					assert(
+						result,
+						string.format(
+							"Expected value%s to be '%s', got '%s'",
+							never and " never" or "",
+							expectedValue,
+							tostring(value)
+						)
+					)
 				end
-
 			elseif key == "isA" then
 				return function(expectedType: string)
 					local value = rawget(self, "_value")
@@ -50,13 +50,16 @@ local function this(v: any)
 					if never then
 						result = not result
 					end
-					assert(result, string.format(
-						"Expected value%s to be a '%s', got a '%s'",
-						never and " never" or "",
-						expectedType, receivedType
-					))
+					assert(
+						result,
+						string.format(
+							"Expected value%s to be a '%s', got a '%s'",
+							never and " never" or "",
+							expectedType,
+							receivedType
+						)
+					)
 				end
-
 			elseif key == "fail" or key == "fails" or key == "throw" or key == "throws" then
 				return function()
 					local value = rawget(self, "_value")
@@ -68,12 +71,8 @@ local function this(v: any)
 					if never then
 						result = not result
 					end
-					assert(result, string.format(
-						"Expected value%s to error",
-						never and " never" or ""
-					))
+					assert(result, string.format("Expected value%s to error", never and " never" or ""))
 				end
-
 			elseif key == "matches" or key == "match" then
 				return function(pattern: string)
 					local value = rawget(self, "_value")
@@ -83,24 +82,26 @@ local function this(v: any)
 					if never then
 						result = not result
 					end
-					assert(result, string.format(
-						"Expected value%s '%s' to match '%s'",
-						never and " never" or "",
-						tostring(value), pattern
-					))
+					assert(
+						result,
+						string.format(
+							"Expected value%s '%s' to match '%s'",
+							never and " never" or "",
+							tostring(value),
+							pattern
+						)
+					)
 				end
 
-			-- TODO: Implement more assertion functions
-			--elseif key == "contains" then
-			--elseif key == "containsOnly" then
-			--elseif key == "nears" or key == "nearly" then
-
+				-- TODO: Implement more assertion functions
+				--elseif key == "contains" then
+				--elseif key == "containsOnly" then
+				--elseif key == "nears" or key == "nearly" then
 			end
 
 			return self
 		end,
 	})
-
 
 	return query
 end

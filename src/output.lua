@@ -1,7 +1,13 @@
-local function output(options: {[string]: any}, results: {[any]: any}, passed: number, failed: number, skipped: number)
+local function output(
+	options: { [string]: any },
+	results: { [any]: any },
+	passed: number,
+	failed: number,
+	skipped: number
+)
 	local content = {
 		"\n == Test Results ==",
-		string.format(" %d Passed, %d Failed, %d Skipped\n", passed, failed, skipped)
+		string.format(" %d Passed, %d Failed, %d Skipped\n", passed, failed, skipped),
 	}
 
 	for dirName, files in pairs(results) do
@@ -36,14 +42,14 @@ local function output(options: {[string]: any}, results: {[any]: any}, passed: n
 
 			-- This gives the most relevant results first,
 			-- rather than just the order that pairs decided to do
-			for _,o in ipairs(failures) do
+			for _, o in ipairs(failures) do
 				table.insert(content, o)
 			end
 			if not options.onlyShowFailures then
-				for _,o in ipairs(passes) do
+				for _, o in ipairs(passes) do
 					table.insert(content, o)
 				end
-				for _,o in ipairs(skips) do
+				for _, o in ipairs(skips) do
 					table.insert(content, o)
 				end
 			end

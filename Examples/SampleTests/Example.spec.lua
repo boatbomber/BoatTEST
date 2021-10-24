@@ -7,7 +7,7 @@ return {
 	end,
 
 	["1+1 should equal 2"] = function(skip)
-		this(1+1).will.equal(2)
+		this(1 + 1).will.equal(2)
 	end,
 
 	["tests can write full sentences"] = function(skip)
