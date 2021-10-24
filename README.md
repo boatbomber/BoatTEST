@@ -4,13 +4,17 @@ Boat's TrulyEasySimpleTesting - A Luau unit testing framework. Inspired by Eltto
 
 ## API
 
-`function BoatTEST.run(config: dictionary)`
+```Lua
+function BoatTEST.run(config: dictionary)
+```
 
-config.directories: A table of Instances to search for .spec ModuleScripts within
-config.includeDescendants: A boolean that defines whether to run all descendant spec files of directories or just the direct children
-config.verbose: A boolean that defines whether verbose logging is enabled
+`config.directories`: A table of Instances to search for .spec ModuleScripts within
+`config.includeDescendants`: A boolean that defines whether to run all descendant spec files of directories or just the direct children
+`config.verbose`: A boolean that defines whether verbose logging is enabled
 
-`function BoatTEST.this(value: any)`
+```Lua
+function BoatTEST.this(value: any)
+```
 
 Takes in a value, that then gets used in assertions
 
