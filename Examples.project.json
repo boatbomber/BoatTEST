@@ -1,0 +1,15 @@
+{
+	"name": "Examples",
+	"tree": {
+		"$className": "DataModel",
+
+		"Workspace": {
+			"$className": "Workspace",
+			"$path": "Examples",
+
+			"BoatTEST": {
+				"$path": "src"
+			}
+		}
+	}
+}
