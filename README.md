@@ -35,7 +35,7 @@ Reverses whatever the assertion is (ie `this(nil).never.exists()` will pass)
 `.exists()`, `.exist()` -
 Asserts that value is non-nil
 
-`.equal(expectedValue)`, `.equal(expectedValue)` -
+`.equals(expectedValue)`, `.equal(expectedValue)` -
 Asserts that value is equal to expectedValue
 
 `.isA(expectedType)` -
