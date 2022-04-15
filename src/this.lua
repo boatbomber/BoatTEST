@@ -34,7 +34,7 @@ local function this(v: any)
 						string.format(
 							"Expected value%s to be '%s', got '%s'",
 							never and " never" or "",
-							expectedValue,
+							tostring(expectedValue),
 							tostring(value)
 						)
 					)
@@ -55,8 +55,8 @@ local function this(v: any)
 						string.format(
 							"Expected value%s to be a '%s', got a '%s'",
 							never and " never" or "",
-							expectedType,
-							receivedType
+							tostring(expectedType),
+							tostring(receivedType)
 						)
 					)
 				end
@@ -88,7 +88,7 @@ local function this(v: any)
 							"Expected value%s '%s' to match '%s'",
 							never and " never" or "",
 							tostring(value),
-							pattern
+							tostring(pattern)
 						)
 					)
 				end

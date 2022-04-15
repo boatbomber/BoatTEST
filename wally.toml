@@ -1,7 +1,7 @@
 [package]
 name = "boatbomber/boattest"
 description = "Boat's TrulyEasySimpleTesting - A Luau unit testing framework. Inspired by Elttob's FusionCI"
-version = "0.1.0"
+version = "0.1.1"
 license = "MIT"
 authors = ["boatbomber (https://boatbomber.com)"]
 registry = "https://github.com/upliftgames/wally-index"
